@@ -108,47 +108,37 @@
     background-color: #eef3f7;
     overflow: hidden;
     width: 100%;
-    height: 300px;
+    height: 500px;
     margin-top: 40px;
     position: relative;
 }
 
 .slide {
     width: 100%;
-    height: 100%;
+    height: 500px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    animation: slide 20s infinite linear;
+    align-items: flex-start;
+    animation: slideAnimation 30s infinite linear;
     position: relative;
+    gap: 30px;
+    margin: 30px 0px 100px 0px; /* top right bottom left */
 }
 
 
 
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-        /* Adjust the percentage based on the number of slides */
-    }
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-330px); } /* Adjusted for fixed width + gap */
+    40% { transform: translateX(-660px); } /* Adjusted for fixed width + gap */
+    60% { transform: translateX(-990px); } /* Adjusted for fixed width + gap */
+    80% { transform: translateX(-1320px); } /* Adjusted for fixed width + gap */
+    100% { transform: translateX(0); }
 }
-
-.slide {
+/* .slide {
     margin-right: 20px;
-}
-
-
-.slide1:hover .txt1,
-.slide2:hover .txt2,
-.slide3:hover .txt3,
-.slide4:hover .txt4,
-.slide5:hover .txt5 {
-    opacity: 1;
-}
+} */
 
 .txt1,
 .txt2,
@@ -160,22 +150,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 20px;
-    color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+    position: relative; /* Changed to relative */
+    opacity: 1; /* Set to 1 to see the texts */
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a semi-transparent background */
+    color: white; /* Optional: Change text color */
+    padding: 10px; /* Add padding to the text */
     transition: opacity 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Optional: Add a semi-transparent background */
-    color: white;
-    /* Optional: Change text color */
-    padding: 10px;
-    /* Add padding to the text */
 }
+
 
 .slide:hover {
     animation-play-state: paused;
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 50px;
 }
