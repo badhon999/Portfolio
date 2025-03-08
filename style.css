@@ -1,3 +1,4 @@
+
 .navbar {
     display: flex;
     align-items: center;
@@ -46,13 +47,25 @@
     border-radius: 5px;
 }
 
+.info_hobby_cont {
+    background-image: url("info_bg.jpeg");
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Fixes the background in place during scroll */
+    margin-top: 0%;
+    height: auto; /* Makes sure it spans the full height of the viewport */
+    width: 100vw;
+}
 .info {
-    background-color: #ffffff;
+    background-color:rgba(255, 255, 255, 0.5);
     color: black;
-    height: 40h;
+    height: 50vh;
     margin-top: 100px;
+    padding: 0;
     display: grid;
     grid-template-columns: 50% 50%;
+    backdrop-filter: blur(2px);
 }
 
 .info_text {
@@ -62,6 +75,7 @@
     overflow-wrap: break-word;
     background-color: #eef3f7;
     color: black;
+    height: 50vh;
     margin-left: 200px;
     margin-right: 20px;
     transition: 0.3s;
@@ -77,8 +91,10 @@
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
     transition: 0.3s;
     margin-right: 200px;
+    height: 50vh;
 }
 
 .card:hover {
@@ -100,6 +116,7 @@
 .card-img-top {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    background-color: #eef3f7;
     display: flex;
     margin: 0 auto;
 }
@@ -108,14 +125,15 @@
     background-color: #eef3f7;
     overflow: hidden;
     width: 100%;
-    height: 500px;
-    margin-top: 40px;
+    height: 470px;
+    margin: 0px 0px 0px 0px; /* top right bottom left */
+    padding: 0;
     position: relative;
 }
 
 .slide {
     width: 100%;
-    height: 500px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -165,6 +183,176 @@
 }
 
 section {
-    padding: 100px 20px;
-    margin-top: 50px;
+    padding: 50px 20px;
+    margin-top: 10px; /* Reduced margin to close the gap */
 }
+.footer_slide {
+    height: 400px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    padding: 20px;
+    font-family: Nunito, sans-serif;
+
+    /* Shared color variables */
+    --primary-color: #103242;
+    --text-color: #2d2d2d;
+    --secondary-text: #4a4a4a;
+    --hover-color: #0381fe;
+    --border-color: #eeeeee;
+}
+
+.ft_info {
+    grid-column: span 2;
+    grid-row: span 10;
+    padding: 30px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px 7px rgba(0, 0, 0, 0.05);
+
+    h3 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    p {
+        color: var(--secondary-text);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    br {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px;
+        grid-column: 1 / -1;
+
+        h3 {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.ft_quick {
+    grid-column: 3;
+    grid-row: span 10;
+    padding: 30px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px 7px rgba(0, 0, 0, 0.05);
+
+    h3 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 10px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(3, 129, 254, 0.1);
+                transform: translateX(5px);
+                color: var(--hover-color);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-column: 1 / -1;
+        padding: 20px;
+
+        h3 {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.contact_me {
+    border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 10px;
+        padding: 30px;
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0 4px 20px 7px rgba(0, 0, 0, 0.05);
+        justify-self: end;
+        grid-column: span 10 / span 10;
+        grid-row: span 10 / span 10;
+        grid-column-start: 4;
+        box-sizing: border-box;
+        justify-content: space-around;
+        overflow-wrap: break-word;
+        color: black;
+        height: 50vh;
+        margin-left: 200px;
+        margin-right: 20px;
+        transition: 0.3s;
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+        margin-bottom: 8px;
+        resize: vertical;
+      }
+      
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      /* Style the container/contact section */
+      
+      /* Create two columns that float next to eachother */
+      .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+    }
